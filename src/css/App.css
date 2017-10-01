@@ -67,25 +67,13 @@ a:hover {
     margin: 0 auto;
 }
 
-.follower {
-    display: inline-block;
-    margin: 10px;
-}
-
-.follower img {
-    border-radius: 50%;
-    background-size: cover!important;
-    width: 100px;
-    height: 100px;
-}
-
 #form {
     margin-bottom: 100px;
 }
 
 #card {
     position: relative;
-    height: 380px;
+    min-height: 380px;
     max-width: 100%;
     margin: 0 auto;
     background: #ECECEC;
@@ -135,6 +123,12 @@ a:hover {
     background: linear-gradient(bottom, rgba(255,255,255, .1) 0%, rgba(255,255,255,.05) 70%, rgba(255,255,255,0) 100%);
 }
 
+#error {
+    text-align: center;
+    font-size: 16px;
+    margin: 50px;
+}
+
 #show-more {
     width: 100%;
     text-align: center;
@@ -153,16 +147,29 @@ a:hover {
     text-transform: uppercase;
 }
 
-.more-followers-false {
+.more-followers-false, .valid-false {
     display: none;
 }
 
-.valid-false {
-    display: none;
+.follower {
+    display: inline-block;
+    margin: 10px;
 }
 
-#error {
-    text-align: center;
-    font-size: 16px;
-    margin: 50px;
+.follower img {
+    border-radius: 50%;
+    background-size: cover!important;
+    width: 100px;
+    height: 100px;
+}
+
+@media(max-width: 560px) {
+    #avatar {
+        float: none;
+    }
+
+    #info {
+        width: 100%;
+        padding: 5%;
+    }
 }

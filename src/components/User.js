@@ -102,11 +102,14 @@ class User extends Component {
                         <a id="avatar" href={this.state.html_url} target="_blank">
                                 <img alt="" style={{backgroundImage: `url(${this.state.avatar_url})`}} />
                         </a>
-                      <h2><a href={this.state.html_url} target="_blank">{this.state.username}</a></h2>
-                      <h3>{this.state.name}</h3>
-                      <h4>{this.state.followers_count} followers</h4>
-                      <h4><i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.location}</h4>
-                      <h4><i className="fa fa-envelope-o" aria-hidden="true"></i> {this.state.email}</h4>
+
+                        <div id="info">
+                            <h2><a href={this.state.html_url} target="_blank">{this.state.username}</a></h2>
+                            <h3>{this.state.name}</h3>
+                            <h4>{this.state.followers_count} followers</h4>
+                            <h4><i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.location}</h4>
+                            <h4><i className="fa fa-envelope-o" aria-hidden="true"></i> {this.state.email}</h4>
+                        </div>
                     </div>
 
                   <div id="followers">
