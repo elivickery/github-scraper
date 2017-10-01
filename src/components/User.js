@@ -96,14 +96,17 @@ class User extends Component {
           <div>
               <div id="error">{this.state.error}</div>
               <div id="user" className={'valid-' + this.state.valid}>
+                    <div id="card">
+                        <div id="header"></div>
+
                         <a id="avatar" href={this.state.html_url} target="_blank">
                                 <img alt="" style={{backgroundImage: `url(${this.state.avatar_url})`}} />
                         </a>
                       <h2><a href={this.state.html_url} target="_blank">{this.state.username}</a></h2>
                       <h3>{this.state.name}</h3>
                       <h4>{this.state.followers_count} followers</h4>
-                      <h4>{this.state.location}</h4>
-                      <h4>{this.state.email}</h4>
+                      <h4><i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.location}</h4>
+                      <h4><i className="fa fa-envelope-o" aria-hidden="true"></i> {this.state.email}</h4>
                     </div>
 
                   <div id="followers">
@@ -111,8 +114,9 @@ class User extends Component {
                   </div>
 
                   <div id="show-more">
-                      <button className={'more-followers-' + this.moreFollowersToLoad()} onClick={() => this.getFollowers()}>Load More</button>
+                      <button className={'more-followers-' + this.moreFollowersToLoad()} onClick={() => this.getFollowers()}>Load More <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                   </div>
+              </div>
           </div>
         );
     }
