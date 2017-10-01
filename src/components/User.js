@@ -22,7 +22,32 @@ class User extends Component {
         };
     }
 
+    moreFollowersToLoad() {
+        return (this.state.followers.length < this.state.followers_count)
+    }
 
+    getFollowers() {
+        if(this.moreFollowersToLoad) {
+          axios.get('https://github-user-data-api.herokuapp.com/' + this.props.username + '/followers/' + this.state.followers_page)
+            .then(response => {
+                let data = response.data;
+
+                let followers_arr = [];
+
+                data.forEach(function(follower) {
+                    followers_arr.push(<Follower key={follower["login"]} avatar_url={follower["avatar_url"]} html_url={follower["html_url"]} />);
+                });
+
+                this.setState({
+                    followers: this.state.followers.concat(followers_arr),
+                    followers_page: this.state.followers_page + 1
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
+    }
 
     componentDidMount() {
         axios.get('https://github-user-data-api.herokuapp.com/' + this.props.username)
@@ -53,6 +78,7 @@ class User extends Component {
                     });
                 }
 
+                this.getFollowers();
             } else {
                 this.setState({
                     valid: false,
@@ -70,8 +96,6 @@ class User extends Component {
           <div>
               <div id="error">{this.state.error}</div>
               <div id="user" className={'valid-' + this.state.valid}>
-                    <div id="card">
-
                         <a id="avatar" href={this.state.html_url} target="_blank">
                                 <img alt="" style={{backgroundImage: `url(${this.state.avatar_url})`}} />
                         </a>
@@ -81,7 +105,14 @@ class User extends Component {
                       <h4>{this.state.location}</h4>
                       <h4>{this.state.email}</h4>
                     </div>
-              </div>
+
+                  <div id="followers">
+                      {this.state.followers}
+                  </div>
+
+                  <div id="show-more">
+                      <button className={'more-followers-' + this.moreFollowersToLoad()} onClick={() => this.getFollowers()}>Load More</button>
+                  </div>
           </div>
         );
     }
