@@ -28,7 +28,7 @@ class User extends Component {
 
     getFollowers() {
         if(this.moreFollowersToLoad) {
-          axios.get('https://github-user-data-api.herokuapp.com/' + this.props.username + '/followers/' + this.state.followers_page)
+          axios.get('https://github-user-data-api.herokuapp.com/followers?username=' + this.props.username + '&page=' + this.state.followers_page)
             .then(response => {
                 let data = response.data;
 
@@ -50,7 +50,7 @@ class User extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://github-user-data-api.herokuapp.com/' + this.props.username)
+        axios.get('https://github-user-data-api.herokuapp.com/user?username=' + this.props.username)
         .then(response => {
             let data = response.data;
             console.log(data);
