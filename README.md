@@ -19,6 +19,15 @@ The GitHub API has a relatively low rate limit of 60 calls per hour unless it is
 Check out the backend code here: [https://github.com/elivickery/github-user-api.git](https://github.com/elivickery/github-user-api.git).
 
 -----------
+## Interested in learning more about me?
+
+Check out my [GitHub profile](http://www.github.com/elivickery) or my [LinkedIn](https://www.linkedin.com/in/elivickery).
+
+Or take a look at a couple of my most recent projects:
+* [21Forever](https://github.com/elivickery/21-forever-frontend) - Rails/React habit-tracking app
+* [TagScraper](https://github.com/elivickery/tagscraper) - Sinatra/Heroku URL parser
+
+-----------
 
 ![Screenshot](https://github.com/elivickery/github-scraper/blob/master/XwO1JnPjfc.gif?raw=true)
 
