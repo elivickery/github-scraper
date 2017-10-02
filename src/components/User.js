@@ -117,7 +117,7 @@ class User extends Component {
                   </div>
 
                   <div id="show-more">
-                      <button className={'more-followers-' + this.moreFollowersToLoad()} onClick={() => this.getFollowers()}>Load More <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                      <button className={'more-followers-' + this.moreFollowersToLoad()} onClick={() => this.getFollowers()}>Load More <i className="fa fa-angle-down" aria-hidden="true"></i></button>
                   </div>
               </div>
           </div>
