@@ -2,8 +2,6 @@
 
 ## Enter any GitHub username to generate an 'ID card' with relevant info and a list of followers.
 
------------
-
 ## The Challenge:
 Build a small app that allows users to enter a GitHub username and fetches corresponding data from the GitHub API, including user info and a list of the user's followers.  GitHub returns only a portion of total followers, so add a 'load more' button that will fetch and append more followers to the list until all followers have been fetched.
 
@@ -20,6 +18,5 @@ Check out the backend code here: [https://github.com/elivickery/github-user-api.
 
 -----------
 
-
-
+![Screenshot](https://github.com/elivickery/github-scraper/blob/master/XwO1JnPjfc.gif?raw=true)
 
